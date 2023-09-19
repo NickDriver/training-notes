@@ -1,11 +1,10 @@
 import Image from 'next/image'
+import NavBar from './components/NavBar'
 
 export default function Home() {
   return (
     <>
-      <div>
-        <h1 className='text-green-400'>Trainig Notes</h1>
-      </div>
+      <div className='flex justify-center items-center p-12 bg-slate-900 text-white'>Main page</div>
     </>
   )
 }
