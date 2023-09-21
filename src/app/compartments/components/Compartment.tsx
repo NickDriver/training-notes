@@ -21,7 +21,7 @@ const vendor_data: Vendor = {
 
 const w_num: string = "w-3/4 ";
 
-export default function Compartment({ size, num, vendor}: any){
+export default function Compartment({ size, num, vendor }: any) {
   if (vendor === Vendors.SHELL) {
     vendor_data.color = VendorColor.SHELL;
     if (num === 1) {
@@ -59,7 +59,7 @@ export default function Compartment({ size, num, vendor}: any){
       <div className="flex justify-center items-center font-bold">{num}</div>
       <div className={"flex flex-col items-center p-1 text-sm font-normal rounded-md" + vendor_data.color}>
         <p className="underline">{vendor}</p>
-        <p className="">{"code: "+vendor_data.comp_code}</p>
+        <p className="">{"code: " + vendor_data.comp_code}</p>
       </div>
     </div>
   )
