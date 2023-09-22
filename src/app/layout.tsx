@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <NavBar />
-      <div className='border-box h-full p-4'>{children}</div>
-        
+        <NavBar />
+        <div className='border-box h-full p-4'>{children}</div>
+
       </body>
     </html>
   )
