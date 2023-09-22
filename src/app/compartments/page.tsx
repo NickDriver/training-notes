@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import Semi from "./_components/Semi";
 
