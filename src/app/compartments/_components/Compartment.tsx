@@ -1,4 +1,4 @@
-import type { Compartment } from './Semi'
+  import type { Compartment } from './Semi'
 
 enum Vendors {
   SHELL = "Shell",
