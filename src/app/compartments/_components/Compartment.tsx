@@ -1,6 +1,6 @@
-import type { Compartment } from './Semi'
 
-enum Vendors {
+
+export enum Vendors {
   SHELL = "Shell",
   VERNON = "Vernon",
 }
@@ -20,9 +20,23 @@ const vendor_data: Vendor = {
   comp_code: "",
 }
 
+export enum TruckType {
+  SEMI,
+  TwoAndTwo,
+  TubAndThree,
+}
+
+export interface Compartment_t {
+  compartment: Number;
+  size: Number;
+  vendor: Vendors;
+  truck_type: TruckType;
+}
+
 const w_num: string = "w-3/4 ";
 
-export default function Compartment({ compartment_info: { vendor, compartment } }: any) {
+
+export function Compartment({ compartment_info: { vendor, compartment } }: any) {
   if (vendor === Vendors.SHELL) {
     vendor_data.color = VendorColor.SHELL;
     if (compartment === 1) {
