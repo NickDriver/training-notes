@@ -1,5 +1,5 @@
 import { Compartment, Compartment_t, Vendors, TruckType } from "./Compartment";
-import { data_shell, data_vernon } from "../_data/data";
+import { data_shell, data_vernon } from "../_data/data_semi";
 
 
 
