@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-  import type { Compartment } from './Semi'
-=======
->>>>>>> 45d57dfc2a61b44a567e0b44ceeb5772cddc2ea5
 
 
 export enum Vendors {
