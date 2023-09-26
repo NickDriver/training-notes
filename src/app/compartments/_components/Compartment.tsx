@@ -12,12 +12,23 @@ export enum VendorColor {
 
 export enum TruckType {
   SEMI,
-  TwoAndTwo,
-  TubAndThree,
+  TWO_1,
+  TWO_2,
+  TUB,
+  THREE,
+}
+
+export enum TrailersCompartments {
+  SEMI_TRAILER = 4,
+  TUB = 1,
+  TRUCK_2 = 2,
+  TRAILER_2 = 2,
+  TRAILER_3 = 3,
 }
 
 export interface Compartment_t {
   compartment: Number;
+  compartments: TrailersCompartments;
   size: Number;
   vendor: Vendors;
   truck_type: TruckType;

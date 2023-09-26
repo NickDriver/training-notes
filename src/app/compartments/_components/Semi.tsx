@@ -5,7 +5,7 @@ import { data_shell, data_vernon } from "../_data/data_semi";
 
 export default function Semi() {
   return (
-    <div className="flex flex-col items-center hover:bg-rose-400">
+    <div className="flex flex-col items-center hover:bg-rose-400 mt-2 mb-4">
       <div>SEMI</div>
       <div className="flex justify-center flex-row-reverse m-1 w-96">
         <Compartment compartment_info={data_shell[0]} />
