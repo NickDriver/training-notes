@@ -1,3 +1,4 @@
+import { Key } from "react";
 
 
 enum Color {
@@ -9,21 +10,67 @@ enum Color {
   ETH = " bg-sky-600",
 }
 
-function ProductsProvided({ gallons }: { gallons: any }) {
-  const count: Number = Object.keys(gallons).length;
+const REG = <div className={"flex w-full justify-center p-2 " + Color.REG} key={"01"}>
+  <input className="placeholder:text-center w-3/4" placeholder="87" />
+</div>;
 
-  // const result_gallons = Object.assign(gallons);
-  // Object.entries(result_gallons).forEach(([k, v]) => {
-  //   if (v === 0) delete result_gallons[k];
-  // });
+const MID = <div className={"flex w-full justify-center p-2 " + Color.MID} key={"02"}>
+  <input className="placeholder:text-center w-3/4" placeholder="89" />
+</div>;
+
+const PRM = <div className={"flex w-full justify-center p-2 " + Color.PRM} key={"03"}>
+  <input className="placeholder:text-center w-3/4" placeholder="91" />
+</div>;
+
+const DSL = <div className={"flex w-full justify-center p-2 " + Color.DSL} key={"04"}>
+  <input className="placeholder:text-center w-3/4" placeholder="DIESEL" />
+</div>;
+
+const E85 = <div className={"flex w-full justify-center p-2 " + Color.E85} key={"05"}>
+  <input className="placeholder:text-center w-3/4" placeholder="E85" />
+</div>;
+
+const ETH = <div className={"flex w-full justify-center p-2 " + Color.ETH} key={"06"}>
+  <input className="placeholder:text-center w-3/4" placeholder="ETHANOL" />
+</div>;
+
+function ProductsProvided({ gallons }: { gallons: any }) {
+  const result_gallons = Object.assign(gallons);
+  Object.entries(result_gallons).forEach(([k, v]) => {
+    if (v === 0) delete result_gallons[k];
+  });
+  const my_array = Object.keys(result_gallons);
+  const show = my_array.map((product) => {
+    if (product === "regular") {
+      return REG;
+    }
+    if (product === "midgrade") {
+      return MID;
+    }
+    if (product === "premium") {
+      return PRM;
+    }
+    if (product === "e85") {
+      return E85;
+    }
+    if (product === "diesel") {
+      return DSL;
+    }
+    if (product === "ethsnol") {
+      return ETH;
+    }
+  });
   return (
-    <div>{count.toString()}</div>
+    <>
+      {show}
+    </>
+
   )
 }
 
 export default function Choice({ gallons }: { gallons: any }) {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full rounded-md">
       <ProductsProvided gallons={gallons} />
     </div>
 
