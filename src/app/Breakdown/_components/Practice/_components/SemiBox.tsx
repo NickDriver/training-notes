@@ -1,10 +1,10 @@
 import Result from "./Result";
 import Semi from "./Semi";
 
-export default function SemiBox() {
+export default function SemiBox({ gallons }: { gallons: any }) {
   return (
     <div className="flex justify-center w-full ">
-      <Semi />
+      <Semi gallons={gallons} />
       <Result />
     </div>
   )

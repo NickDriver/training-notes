@@ -1,3 +1,4 @@
+import Choice from "./Choice";
 import { ProductLabel, TruckData, TruckType, CompartmentNumber, Product } from "./products/ProductLabel";
 
 const truck_data: TruckData = {
@@ -6,7 +7,7 @@ const truck_data: TruckData = {
   product: Product.GAS,
 }
 
-export default function CompartmentPractice({ number }: { number: Number }) {
+export default function CompartmentPractice({ number, gallons }: { number: Number, gallons: any }) {
   if (number === 1) { truck_data.compartment_number = CompartmentNumber.ONE; }
   if (number === 2) { truck_data.compartment_number = CompartmentNumber.TWO; }
   if (number === 3) { truck_data.compartment_number = CompartmentNumber.THREE; }
@@ -29,6 +30,7 @@ export default function CompartmentPractice({ number }: { number: Number }) {
       <ProductLabel truck_data={truck_data_GAS} />
       <ProductLabel truck_data={truck_data_DSL} />
       <ProductLabel truck_data={truck_data_ETH} />
+      <Choice gallons={gallons} />
     </div>
   )
 }

@@ -10,12 +10,11 @@ export default function BreakdownBox() {
   function gallonsInputHandler(data: any) {
     setGallons(data);
   }
-  // Temporary:
-  // console.log(gallons);
+  // Create new Object with no 0
 
   return (
     <div className="flex justify-center m-2">
-      <Practice />
+      <Practice gallons={gallons} />
       <Gallons onGallonsInput={gallonsInputHandler} />
     </div>
   )
