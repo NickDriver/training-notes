@@ -52,7 +52,7 @@ export default function Gallons({ onGallonsInput }: { onGallonsInput: any }) {
       premium: 0,
       e85: 0,
       diesel: 0,
-      ethsnol: 0,
+      ethanol: 0,
     }
     onGallonsInput(form_data);
   }
@@ -66,7 +66,7 @@ export default function Gallons({ onGallonsInput }: { onGallonsInput: any }) {
       premium: premium,
       e85: e85,
       diesel: diesel,
-      ethsnol: ethsnol,
+      ethanol: ethsnol,
     }
     setRegular(0);
     setMidgrade(0);

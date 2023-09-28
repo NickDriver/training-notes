@@ -50,7 +50,7 @@ function ProductsProvided({ gallons }: { gallons: any }) {
     if (product === "diesel") {
       return DSL;
     }
-    if (product === "ethsnol") {
+    if (product === "ethanol") {
       return ETH;
     }
   });
