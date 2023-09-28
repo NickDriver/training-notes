@@ -1,6 +1,3 @@
-import { Key } from "react";
-
-
 enum Color {
   REG = " bg-slate-400",
   MID = " bg-blue-600",
@@ -64,7 +61,6 @@ function ProductsProvided({ gallons }: { gallons: any }) {
     <>
       {show}
     </>
-
   )
 }
 
