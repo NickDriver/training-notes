@@ -11,10 +11,10 @@ export default function BreakdownBox() {
     setGallons(data);
   }
   // Temporary:
-  console.log(gallons);
+  // console.log(gallons);
 
   return (
-    <div className="flex justify-center m-2 hover:bg-rose-300">
+    <div className="flex justify-center m-2">
       <Practice />
       <Gallons onGallonsInput={gallonsInputHandler} />
     </div>

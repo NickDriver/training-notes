@@ -1,7 +1,10 @@
+import SemiBox from "./_components/SemiBox";
+
 export default function Practice() {
   return (
-    <div className="flex justify-center items-center w-3/4 m-2 bg-green-800 rounded-md">
-      Practice Box
+    <div className="flex flex-col items-center w-full m-2 rounded-md">
+      <SemiBox />
+
     </div>
   )
 }
