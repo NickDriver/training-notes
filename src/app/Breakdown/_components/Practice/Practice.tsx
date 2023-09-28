@@ -5,7 +5,7 @@ export default function Practice({ gallons }: { gallons: any }) {
   return (
     <div className="flex w-full m-2 rounded-md">
       <Semi gallons={gallons} />
-      <Actions />
+      <Actions gallons={gallons} />
     </div>
   )
 }

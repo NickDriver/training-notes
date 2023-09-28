@@ -32,11 +32,8 @@ const ETH = <div className={"flex w-full justify-center p-2 " + Color.ETH} key={
 </div>;
 
 function ProductsProvided({ gallons }: { gallons: any }) {
-  const result_gallons = Object.assign(gallons);
-  Object.entries(result_gallons).forEach(([k, v]) => {
-    if (v === 0) delete result_gallons[k];
-  });
-  const my_array = Object.keys(result_gallons);
+
+  const my_array = Object.keys(gallons);
   const show = my_array.map((product) => {
     if (product === "regular") {
       return REG;
