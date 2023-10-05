@@ -1,3 +1,6 @@
+import { CompartmentSizes } from "@/app/Breakdown/_data/data_breakdown";
+
+
 export enum TruckType {
   SEMI,
   TUB_THREE,
@@ -17,57 +20,118 @@ export enum Product {
   ETH = "Ethanol",
 }
 
-export interface TruckData {
-  truck_type: TruckType;
-  compartment_number: CompartmentNumber;
-  product: Product;
+// inner style constants
+enum Styles {
+  GAS_COLOR = " bg-orange-200",
+  DSL_COLOR = " bg-green-600",
+  ETH_COLOR = " bg-sky-600",
 }
 
 let size: Number = 0;
 let color: String = " ";
 
-export function ProductLabel({ truck_data }: { truck_data: TruckData }) {
+
+//Function with logic to render right Product
+function product_semi_gas(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.SEMI_GAS_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.SEMI_GAS_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.SEMI_GAS_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.SEMI_GAS_FOUR; }
+}
+
+function product_semi_dsl(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.SEMI_DSL_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.SEMI_DSL_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.SEMI_DSL_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.SEMI_DSL_FOUR; }
+}
+
+function product_semi_eth(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.SEMI_ETH_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.SEMI_ETH_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.SEMI_ETH_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.SEMI_ETH_FOUR; }
+}
+
+function product_tub_gas(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TUB_GAS_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TUB_GAS_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TUB_GAS_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TUB_GAS_FOUR; }
+}
+
+function product_tub_dsl(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TUB_DSL_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TUB_DSL_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TUB_DSL_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TUB_DSL_FOUR; }
+}
+
+function product_tub_eth(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TUB_ETH_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TUB_ETH_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TUB_ETH_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TUB_ETH_FOUR; }
+}
+
+function product_two_gas(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TWO_GAS_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TWO_GAS_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TWO_GAS_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TWO_GAS_FOUR; }
+}
+
+function product_two_dsl(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TWO_DSL_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TWO_DSL_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TWO_DSL_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TWO_DSL_FOUR; }
+}
+
+function product_two_eth(comp: CompartmentNumber) {
+  if (comp === CompartmentNumber.ONE) { size = CompartmentSizes.TWO_ETH_ONE; }
+  if (comp === CompartmentNumber.TWO) { size = CompartmentSizes.TWO_ETH_TWO; }
+  if (comp === CompartmentNumber.THREE) { size = CompartmentSizes.TWO_ETH_THREE; }
+  if (comp === CompartmentNumber.FOUR) { size = CompartmentSizes.TWO_ETH_FOUR; }
+}
+
+export function ProductLabel({ comp, truck_type, product }: { comp: CompartmentNumber, truck_type: TruckType, product: Product }) {
   // Validation for Truck Type and Product
-  if (truck_data.truck_type === TruckType.SEMI) {
-    if (truck_data.product === Product.GAS) {
-      if (truck_data.compartment_number === CompartmentNumber.ONE) { size = 3700; }
-      if (truck_data.compartment_number === CompartmentNumber.TWO) { size = 1700; }
-      if (truck_data.compartment_number === CompartmentNumber.THREE) { size = 1000; }
-      if (truck_data.compartment_number === CompartmentNumber.FOUR) { size = 2100; }
-    }
+  if (truck_type === TruckType.SEMI) {
+    if (product === Product.GAS) product_semi_gas(comp);
+    if (product === Product.DSL) product_semi_dsl(comp);
+    if (product === Product.ETH) product_semi_eth(comp);
+  }
 
-    if (truck_data.product === Product.DSL) {
-      if (truck_data.compartment_number === CompartmentNumber.ONE) { size = 3500; }
-      if (truck_data.compartment_number === CompartmentNumber.TWO) { size = 1500; }
-      if (truck_data.compartment_number === CompartmentNumber.THREE) { size = 800; }
-      if (truck_data.compartment_number === CompartmentNumber.FOUR) { size = 1800; }
-    }
+  if (truck_type === TruckType.TUB_THREE) {
+    if (product === Product.GAS) product_tub_gas(comp);
+    if (product === Product.DSL) product_tub_dsl(comp);
+    if (product === Product.ETH) product_tub_eth(comp);
+  }
 
-    if (truck_data.product === Product.ETH) {
-      if (truck_data.compartment_number === CompartmentNumber.ONE) { size = 3500; }
-      if (truck_data.compartment_number === CompartmentNumber.TWO) { size = 1600; }
-      if (truck_data.compartment_number === CompartmentNumber.THREE) { size = 900; }
-      if (truck_data.compartment_number === CompartmentNumber.FOUR) { size = 2000; }
-    }
+  if (truck_type === TruckType.TWO_TWO) {
+    if (product === Product.GAS) product_two_gas(comp);
+    if (product === Product.DSL) product_two_dsl(comp);
+    if (product === Product.ETH) product_two_eth(comp);
   }
 
   // Validation of Product to switch color
-  if (truck_data.product === Product.GAS) {
-    color = " bg-orange-200";
+  if (product === Product.GAS) {
+    color = Styles.GAS_COLOR;
   }
 
-  if (truck_data.product === Product.DSL) {
-    color = " bg-green-600";
+  if (product === Product.DSL) {
+    color = Styles.DSL_COLOR;
   }
 
-  if (truck_data.product === Product.ETH) {
-    color = " bg-sky-600";
+  if (product === Product.ETH) {
+    color = Styles.ETH_COLOR;
   }
 
   return (
     <div className="flex justify-between w-full text-xs">
-      <div className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{truck_data.product}</div>
-      <div className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{size.toString()}</div>
+      <div data-testid="product" className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{product}</div>
+      <div data-testid="size" className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{size.toString()}</div>
     </div>
   )
 }
