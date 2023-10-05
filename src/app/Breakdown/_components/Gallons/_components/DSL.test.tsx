@@ -8,6 +8,6 @@ describe("Testing DSL", () => {
 
     }
     render(<DSL onDieselInput={dieselHandler} />);
-    expect(screen.getByText(/Diesel/i)).toBeInTheDocument();
+    expect(screen.getByTestId("label-diesel")).toHaveTextContent(/^Diesel$/);
   })
 })
