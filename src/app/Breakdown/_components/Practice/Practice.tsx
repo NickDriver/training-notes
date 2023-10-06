@@ -1,5 +1,5 @@
 import Actions from "./_components/Actions";
-import Semi from "./_components/Semi";
+import Trailer from "./_components/Trailer";
 import { TruckType } from "./_components/products/ProductLabel";
 
 export default function Practice({ gallons }: { gallons: any }) {
@@ -11,7 +11,7 @@ export default function Practice({ gallons }: { gallons: any }) {
 
   return (
     <div className="flex w-full m-2 rounded-md">
-      <Semi truck_type={truck_type} gallons={gallons} />
+      <Trailer truck_type={truck_type} gallons={gallons} />
       <Actions gallons={gallons} />
     </div>
   )
