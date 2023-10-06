@@ -36,3 +36,17 @@ export enum CompartmentSizes {
   TWO_ETH_THREE = 1600,
   TWO_ETH_FOUR = 2700
 }
+
+export enum Products {
+  regular,
+  midgrade,
+  premium,
+  e85,
+  diesel,
+  ethanol,
+}
+
+export interface Product {
+  name: Products;
+  voluem: Number;
+}
