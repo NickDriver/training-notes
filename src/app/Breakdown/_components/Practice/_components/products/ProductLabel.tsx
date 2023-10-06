@@ -1,4 +1,4 @@
-import { CompartmentSizes } from "@/app/Breakdown/_data/data_breakdown";
+import { CompartmentSizes } from "@/app/Breakdown/_data/constants";
 
 
 export enum TruckType {
