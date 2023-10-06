@@ -1,6 +1,9 @@
+import { Product, Products } from "@/app/Breakdown/_data/constants";
+
 export default function DSL({ onDieselInput }: { onDieselInput: any }) {
   function dieselInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    onDieselInput(event?.target.value);
+    const product: Product = { name: Products.diesel, voluem: Number(event.target.value), prevState: null }
+    onDieselInput(product);
   }
   return (
     <div className="flex justify-between m-2 bg-green-700 text-stone-950 rounded-sm">

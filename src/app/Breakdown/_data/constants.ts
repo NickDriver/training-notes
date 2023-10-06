@@ -38,15 +38,16 @@ export enum CompartmentSizes {
 }
 
 export enum Products {
-  regular,
-  midgrade,
-  premium,
-  e85,
-  diesel,
-  ethanol,
+  regular = "regular",
+  midgrade = "midgrade",
+  premium = "premium",
+  e85 = "e85",
+  diesel = "diesel",
+  ethanol = "ethanol",
 }
 
-export interface Product {
+export interface ProductObject {
   name: Products;
   voluem: Number;
+  prevState: null;
 }

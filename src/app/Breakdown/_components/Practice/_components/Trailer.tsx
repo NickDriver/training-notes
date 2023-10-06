@@ -1,3 +1,4 @@
+import { ProductObject } from "@/app/Breakdown/_data/constants";
 import CompartmentPractice from "./CompartmentPractice";
 import { TruckType } from "./products/ProductLabel";
 
@@ -19,7 +20,7 @@ function trailer_name(truck_type: TruckType) {
 }
 
 // Trailer's MAIN()
-export default function Trailer({ gallons, truck_type }: { gallons: any, truck_type: TruckType }) {
+export default function Trailer({ gallons, truck_type }: { gallons: ProductObject[], truck_type: TruckType }) {
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
       <div className="flex justify-center mt-2">{trailer_name(truck_type)}</div>

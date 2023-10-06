@@ -1,6 +1,9 @@
+import { Product, Products } from "@/app/Breakdown/_data/constants";
+
 export default function Ethanol({ onEthanolInput }: { onEthanolInput: any }) {
   function ethanolInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    onEthanolInput(event.target.value);
+    const product: Product = { name: Products.ethanol, voluem: Number(event.target.value), prevState: null };
+    onEthanolInput(product);
   }
   return (
     <div className="flex justify-between m-2 bg-sky-600 text-stone-950 rounded-sm">

@@ -1,6 +1,9 @@
+import { Product, Products } from "@/app/Breakdown/_data/constants";
+
 export default function E85({ onE85Input }: { onE85Input: any }) {
   function e85InputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    onE85Input(event?.target.value);
+    const product: Product = { name: Products.e85, voluem: Number(event.target.value), prevState: null }
+    onE85Input(product);
   }
   return (
     <div className="flex justify-between m-2 bg-yellow-500 text-stone-950 rounded-sm">
