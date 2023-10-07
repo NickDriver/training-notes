@@ -1,8 +1,8 @@
-import { Product, Products } from "@/app/Breakdown/_data/constants";
+import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 export default function DSL({ onDieselInput }: { onDieselInput: any }) {
   function dieselInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    const product: Product = { name: Products.diesel, voluem: Number(event.target.value), prevState: null }
+    const product: ProductObject = { name: Products.diesel, voluem: Number(event.target.value) }
     onDieselInput(product);
   }
   return (

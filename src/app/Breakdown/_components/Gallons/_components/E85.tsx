@@ -1,8 +1,8 @@
-import { Product, Products } from "@/app/Breakdown/_data/constants";
+import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 export default function E85({ onE85Input }: { onE85Input: any }) {
   function e85InputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    const product: Product = { name: Products.e85, voluem: Number(event.target.value), prevState: null }
+    const product: ProductObject = { name: Products.e85, voluem: Number(event.target.value) }
     onE85Input(product);
   }
   return (

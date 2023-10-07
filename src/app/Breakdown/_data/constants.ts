@@ -49,5 +49,5 @@ export enum Products {
 export interface ProductObject {
   name: Products;
   voluem: Number;
-  prevState: null;
+  // prevState: null;
 }

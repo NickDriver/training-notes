@@ -1,8 +1,8 @@
-import { Product, Products } from "@/app/Breakdown/_data/constants";
+import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 export default function Midgrade_89({ onMidgradeInput }: { onMidgradeInput: any }) {
   function midgradeInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    const product: Product = { name: Products.midgrade, voluem: Number(event.target.value), prevState: null };
+    const product: ProductObject = { name: Products.midgrade, voluem: Number(event.target.value) };
     onMidgradeInput(product);
   }
   return (

@@ -1,8 +1,8 @@
-import { Products, Product } from "@/app/Breakdown/_data/constants";
+import { Products, ProductObject } from "@/app/Breakdown/_data/constants";
 
 export default function Premium_91({ onPremiumInput }: { onPremiumInput: any }) {
   function premiumInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    const product: Product = { name: Products.premium, voluem: Number(event.target.value), prevState: null };
+    const product: ProductObject = { name: Products.premium, voluem: Number(event.target.value) };
     onPremiumInput(product);
   }
   return (

@@ -2,7 +2,7 @@ import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 export default function Regular_87({ onRegularInput }: { onRegularInput: any }) {
   function regularInputHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    const product: ProductObject = { name: Products.regular, voluem: Number(event.target.value), prevState: null };
+    const product: ProductObject = { name: Products.regular, voluem: Number(event.target.value) };
     onRegularInput(product);
   }
   return (
