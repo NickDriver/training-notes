@@ -6,6 +6,7 @@ import Practice from "./Practice/Practice";
 import { ProductObject } from "../_data/constants";
 
 export default function BreakdownBox() {
+  // Move all gallons to Gallons and neroow to the product [providedProduct, setProvidedProduct]
   const [regular, setRegular] = useState<ProductObject | null>(null);
   const [midgrade, setMidgrade] = useState<ProductObject | null>(null);
   const [premium, setPremium] = useState<ProductObject | null>(null);
