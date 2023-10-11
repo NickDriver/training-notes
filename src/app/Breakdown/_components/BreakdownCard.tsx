@@ -12,12 +12,17 @@ export default function BreakdownBox() {
   function submitHandler(data: ProductObject[]) {
     setGallons(data);
   }
-  console.log(gallons);
+
+  function resetForm(data: ProductObject[]) {
+    setGallons(data);
+  }
+
   return (
     <div className="flex justify-center m-2">
       <Practice gallons={gallons} />
       <Gallons
         submitHandler={submitHandler}
+        resetForm={resetForm}
       />
     </div>
   )

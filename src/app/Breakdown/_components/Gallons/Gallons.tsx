@@ -8,8 +8,8 @@ import Regular_87 from "./_components/Regular_87";
 import { ProductObject } from "../../_data/constants";
 
 
-export default function Gallons({ submitHandler }:
-  { submitHandler: any }) {
+export default function Gallons({ submitHandler, resetForm }:
+  { submitHandler: any, resetForm: any }) {
 
   // Statese per product
   const [regular, setRegular] = useState<ProductObject | null>(null);
@@ -45,14 +45,14 @@ export default function Gallons({ submitHandler }:
     setEthanol(data);
   }
 
-  function resetFrom() {
+  function resetFormButton() {
     setRegular(null);
     setMidgrade(null);
     setPremium(null);
     setE85(null);
     setDiesel(null);
     setEthanol(null);
-    temp_gallons = [];
+    resetForm([]);
   }
 
   function submitButtonHandler(event: any) {
@@ -76,7 +76,7 @@ export default function Gallons({ submitHandler }:
         <DSL onDieselInput={dieselHandler} />
         <Ethanol onEthanolInput={ethanolHandler} />
         <div className="flex justify-center max-h-fit m-2 text-stone-950 font-bold rounded-sm">
-          <button className="flex justify-center items-center w-1/3 h-10 m-1 bg-slate-400 rounded-md border-4 border-emerald-400 shadow-md shadow-slate-700" type="reset" onClick={resetFrom}>Clear</button>
+          <button className="flex justify-center items-center w-1/3 h-10 m-1 bg-slate-400 rounded-md border-4 border-emerald-400 shadow-md shadow-slate-700" type="reset" onClick={resetFormButton}>Clear</button>
           <button className="flex justify-center items-center w-2/3 h-10 m-1 bg-slate-400 rounded-md border-4 border-emerald-400 shadow-md shadow-slate-700 " type="submit" onClick={submitButtonHandler}>Submit</button>
         </div>
       </form>
