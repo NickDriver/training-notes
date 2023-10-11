@@ -52,6 +52,7 @@ export default function Gallons({ submitHandler }:
     setE85(null);
     setDiesel(null);
     setEthanol(null);
+    temp_gallons = [];
   }
 
   function submitButtonHandler(event: any) {

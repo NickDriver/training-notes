@@ -12,7 +12,7 @@ export default function BreakdownBox() {
   function submitHandler(data: ProductObject[]) {
     setGallons(data);
   }
-
+  console.log(gallons);
   return (
     <div className="flex justify-center m-2">
       <Practice gallons={gallons} />
