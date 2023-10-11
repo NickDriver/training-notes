@@ -11,50 +11,48 @@ enum Color {
 }
 
 function ProductsProvided({ gallons, chosenProductHandler }: { gallons: ProductObject[], chosenProductHandler: any }) {
-  const [chosenProduct, setChosenProduct] = useState<ProductObject | null>(null);
+  function productHandler(data: ProductObject) {
+    chosenProductHandler(data);
+  }
 
   const show = gallons.map((product) => {
     if (product.name === Products.regular) {
       return <div className={"flex w-full justify-center p-2 " + Color.REG} key={"01"}>
         <input className="placeholder:text-center w-3/4" placeholder="87" type="number" min="0" max="4000"
-          onChange={(event: any) => { setChosenProduct({ name: Products.regular, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.regular, voluem: Number(event.target.value) }) }} />
       </div>;
     }
     if (product.name === Products.midgrade) {
       return <div className={"flex w-full justify-center p-2 " + Color.MID} key={"02"}>
         <input className="placeholder:text-center w-3/4" placeholder="89" type="number" min={0} max={4000}
-          onChange={(event: any) => { setChosenProduct({ name: Products.midgrade, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.midgrade, voluem: Number(event.target.value) }) }} />
       </div>;
     }
     if (product.name === Products.premium) {
       return <div className={"flex w-full justify-center p-2 " + Color.PRM} key={"03"}>
         <input className="placeholder:text-center w-3/4" placeholder="91" type="number" min={0} max={4000}
-          onChange={(event: any) => { setChosenProduct({ name: Products.premium, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.premium, voluem: Number(event.target.value) }) }} />
       </div>;
     }
     if (product.name === Products.e85) {
       return <div className={"flex w-full justify-center p-2 " + Color.E85} key={"05"}>
         <input className="placeholder:text-center w-3/4" placeholder="E85" type="number" min={0} max={4000}
-          onChange={(event: any) => { setChosenProduct({ name: Products.e85, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.e85, voluem: Number(event.target.value) }) }} />
       </div>;
     }
     if (product.name === Products.diesel) {
       return <div className={"flex w-full justify-center p-2 " + Color.DSL} key={"04"}>
         <input className="placeholder:text-center w-3/4" placeholder="DIESEL" type="number" min={0} max={4000}
-          onChange={(event: any) => { setChosenProduct({ name: Products.diesel, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.diesel, voluem: Number(event.target.value) }) }} />
       </div>;
     }
     if (product.name === Products.ethanol) {
       return <div className={"flex w-full justify-center p-2 " + Color.ETH} key={"06"}>
         <input className="placeholder:text-center w-3/4" placeholder="ETHANOL" type="number" min={0} max={4000}
-          onChange={(event: any) => { setChosenProduct({ name: Products.ethanol, voluem: Number(event.target.value) }) }} />
+          onChange={(event: any) => { productHandler({ name: Products.ethanol, voluem: Number(event.target.value) }) }} />
       </div>;
     }
   });
-  if (chosenProduct) {
-    chosenProductHandler(chosenProduct);
-  }
-
   return (
     <>
       {show}

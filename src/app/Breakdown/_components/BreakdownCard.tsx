@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Gallons from "./Gallons/Gallons";
 import Practice from "./Practice/Practice";
-import { ProductObject } from "../_data/constants";
+import { ProductObject, Products } from "../_data/constants";
 
 export default function BreakdownBox() {
   // Move all gallons to Gallons and neroow to the product [providedProduct, setProvidedProduct]
@@ -59,6 +59,8 @@ export default function BreakdownBox() {
     if (ethanol) temp_gallons.push(ethanol);
     setGallons(temp_gallons);
   }
+
+
 
   return (
     <div className="flex justify-center m-2">

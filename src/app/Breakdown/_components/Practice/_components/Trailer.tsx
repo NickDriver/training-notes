@@ -2,6 +2,7 @@ import { ProductObject } from "@/app/Breakdown/_data/constants";
 import CompartmentPractice from "./CompartmentPractice";
 import { TruckType } from "./products/ProductLabel";
 import { data } from "autoprefixer";
+import { useState } from "react";
 
 enum TrailerName {
   SEMI = "SEMI",
@@ -20,25 +21,36 @@ function trailer_name(truck_type: TruckType) {
   }
 }
 
-function backGallons_1(data: ProductObject) {
-  console.log("From compartment 1: ");
-  console.log(data);
-}
-function backGallons_2(data: ProductObject) {
-  console.log("From compartment 2: ");
-  console.log(data);
-}
-function backGallons_3(data: ProductObject) {
-  console.log("From compartment 3: ");
-  console.log(data);
-}
-function backGallons_4(data: ProductObject) {
-  console.log("From compartment 4: ");
-  console.log(data);
-}
+
 
 // Trailer's MAIN()
-export default function Trailer({ gallons, truck_type }: { gallons: ProductObject[], truck_type: TruckType }) {
+export default function Trailer({ gallons, truck_type, backGallons }: { gallons: ProductObject[], truck_type: TruckType, backGallons: any }) {
+  const [chosenProductCompartmentOne, setChosenProductCompartmentOne] = useState<ProductObject | null>(null);
+  const [chosenProductCompartmentTwo, setChosenProductCompartmentTwo] = useState<ProductObject | null>(null);
+  const [chosenProductCompartmentThree, setChosenProductCompartmentThree] = useState<ProductObject | null>(null);
+  const [chosenProductCompartmentFour, setChosenProductCompartmentFour] = useState<ProductObject | null>(null);
+  const chosenGallons: ProductObject[] = [];
+
+  function backGallons_1(data: ProductObject) {
+    setChosenProductCompartmentOne(data);
+  }
+  function backGallons_2(data: ProductObject) {
+    setChosenProductCompartmentTwo(data);
+  }
+  function backGallons_3(data: ProductObject) {
+    setChosenProductCompartmentThree(data);
+  }
+  function backGallons_4(data: ProductObject) {
+    setChosenProductCompartmentFour(data);
+  }
+
+  if (chosenProductCompartmentOne) chosenGallons.push(chosenProductCompartmentOne);
+  if (chosenProductCompartmentTwo) chosenGallons.push(chosenProductCompartmentTwo);
+  if (chosenProductCompartmentThree) chosenGallons.push(chosenProductCompartmentThree);
+  if (chosenProductCompartmentFour) chosenGallons.push(chosenProductCompartmentFour);
+
+  backGallons(chosenGallons);
+
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
       <div className="flex justify-center mt-2">{trailer_name(truck_type)}</div>
