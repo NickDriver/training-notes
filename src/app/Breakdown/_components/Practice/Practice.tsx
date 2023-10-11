@@ -7,7 +7,7 @@ export default function Practice({ gallons }: { gallons: ProductObject[] }) {
   // UseState for gallons for subtraction - HERE
 
   function chosenGallons(data: ProductObject[]) {
-    console.log(data);
+
 
     /// SWAP gallons to updated gallons and send to <Actions /> HERE!!!!!
   }
