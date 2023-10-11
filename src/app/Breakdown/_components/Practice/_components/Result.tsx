@@ -1,4 +1,4 @@
-import { ProductObject } from "@/app/Breakdown/_data/constants";
+import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 export default function Result({ gallons }: { gallons: ProductObject[] }) {
   const message = gallons.map((product) => <div className="" key={gallons.indexOf(product)}>{product.name + " left: " + product.voluem}</div>);

@@ -13,6 +13,8 @@ export default function BreakdownBox() {
   const [e85, setE85] = useState<ProductObject | null>(null);
   const [diesel, setDiesel] = useState<ProductObject | null>(null);
   const [ethanol, setEthanol] = useState<ProductObject | null>(null);
+
+  let temp_gallons: ProductObject[] = [];
   const [gallons, setGallons] = useState<ProductObject[]>([]);
 
   function regularHandler(data: ProductObject) {
@@ -50,7 +52,6 @@ export default function BreakdownBox() {
 
   function submitHandler(event: any) {
     event.preventDefault();
-    const temp_gallons = [];
     if (regular) temp_gallons.push(regular);
     if (midgrade) temp_gallons.push(midgrade);
     if (premium) temp_gallons.push(premium);
@@ -59,8 +60,6 @@ export default function BreakdownBox() {
     if (ethanol) temp_gallons.push(ethanol);
     setGallons(temp_gallons);
   }
-
-
 
   return (
     <div className="flex justify-center m-2">
