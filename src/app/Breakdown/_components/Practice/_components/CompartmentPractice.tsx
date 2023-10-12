@@ -1,14 +1,15 @@
 import { ProductObject } from "@/app/Breakdown/_data/constants";
 import Choice from "./Choice";
 import { ProductLabel, TruckType, CompartmentNumber, Product } from "./products/ProductLabel";
-import { channel } from "diagnostics_channel";
-import { data } from "autoprefixer";
 
-let comp: CompartmentNumber;
-export default function CompartmentPractice({ comp, gallons, truck_type, backGallonsHandler }: { comp: CompartmentNumber, gallons: ProductObject[], truck_type: TruckType, backGallonsHandler: any }) {
+export default function CompartmentPractice(
+  { comp, gallons, truck_type, backGallonsHandler }:
+    { comp: CompartmentNumber, gallons: ProductObject[], truck_type: TruckType, backGallonsHandler: any }) {
+
   function chosenProductHandler(data: ProductObject) {
     backGallonsHandler(data);
   }
+
   return (
     <div className="flex flex-col items-center w-full m-2 p-1 bg-slate-500 text-slate-900 rounded-md">
       <div className="font-bold">{comp.toString()}</div>
