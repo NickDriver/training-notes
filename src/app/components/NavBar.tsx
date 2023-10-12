@@ -9,7 +9,7 @@ export default function NavBar() {
           <li className="p-2 underline"><Link href="/compartments">Compartments</Link></li>
         </ul>
         <ul className="flex">
-          <li className="underline p-2 "><Link href="/">HOME</Link></li>
+          {/* <li className="underline p-2 "><Link href="/">HOME</Link></li> */}
         </ul>
       </div>
     </>
