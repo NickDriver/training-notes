@@ -6,12 +6,11 @@ import { TruckType } from "./_components/products/ProductLabel";
 import { calculatedGallons } from "../calculation";
 
 export default function Practice({ gallons }: { gallons: ProductObject[] }) {
-  // UseState for gallons for subtraction - HERE
   const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
+
+  // Handler to do math on gallons and send result to Breakdown
   function chosenGallons(data: ProductObject[]) {
     setChosenProductsGallons(calculatedGallons(gallons, data));
-
-    /// SWAP gallons to updated gallons and send to <Actions /> HERE!!!!!
   }
 
   // Function to chose beetwen SEMI, TUB, TWO
