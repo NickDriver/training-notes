@@ -21,10 +21,7 @@ function trailer_name(truck_type: TruckType) {
 }
 
 // Trailer's MAIN()
-export default function Trailer({ gallons, backGallons }: { gallons: ProductObject[], backGallons: any }) {
-  // State for buttons
-  const [truckType, setTruckType] = useState(TruckType.SEMI);
-
+export default function Trailer({ gallons, backGallons, truckType }: { gallons: ProductObject[], backGallons: any, truckType: TruckType }) {
   // Stetes for Compartments
   const [chosenProductCompartmentOne, setChosenProductCompartmentOne] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentTwo, setChosenProductCompartmentTwo] = useState<ProductObject | null>(null);
@@ -56,8 +53,6 @@ export default function Trailer({ gallons, backGallons }: { gallons: ProductObje
   function checkButtonHandler() {
     backGallons(chosenGallons);
   }
-  // Function to chose beetwen SEMI, TUB, TWO
-  // HERE
 
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">

@@ -9,15 +9,23 @@ export default function Practice({ gallons }: { gallons: ProductObject[] }) {
   // State for chosen Gallons
   const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
 
+  // State for buttons to chose Truck Type
+  const [truckType, setTruckType] = useState(TruckType.SEMI);
+
   // Handler to do math on gallons and send result to Breakdown
   function chosenGallons(data: ProductObject[]) {
     setChosenProductsGallons(calculatedGallons(gallons, data));
   }
 
+  // Handler for TruckType state
+  function setTruck(data: TruckType) {
+    setTruckType(data);
+  }
+
   return (
-    <div className="flex w-full m-2 rounded-md hover:bg-rose-500">
-      <Trailer gallons={gallons} backGallons={chosenGallons} />
-      <Actions gallons={chosenProductsGallons} />
+    <div className="flex w-full m-2 rounded-md">
+      <Trailer truckType={truckType} gallons={gallons} backGallons={chosenGallons} />
+      <Actions gallons={chosenProductsGallons} truckType={setTruck} />
     </div>
   )
 }
