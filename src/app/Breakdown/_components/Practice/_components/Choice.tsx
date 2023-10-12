@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ProductObject, Products } from "@/app/Breakdown/_data/constants";
 
 enum Color {
@@ -11,6 +10,8 @@ enum Color {
 }
 
 function ProductsProvided({ gallons, chosenProductHandler }: { gallons: ProductObject[], chosenProductHandler: any }) {
+
+  // Handler to lift state up: ProductsProvided => Choice
   function productHandler(data: ProductObject) {
     chosenProductHandler(data);
   }
