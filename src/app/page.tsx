@@ -13,6 +13,6 @@ export default function Home() {
   const { push } = useRouter();
   useEffect(() => {
     push("/Breakdown");
-  }, []);
+  });
   return (<></>)
 }
