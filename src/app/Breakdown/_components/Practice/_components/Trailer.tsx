@@ -58,7 +58,7 @@ export default function Trailer({ gallons, backGallons }: { gallons: ProductObje
   }
   // Function to chose beetwen SEMI, TUB, TWO
   // HERE
-  // let truckType = TruckType.TUB_THREE;
+
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
       <div className="flex justify-center mt-2">{trailer_name(truckType)}</div>
