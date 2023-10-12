@@ -9,6 +9,7 @@ export default function BreakdownBox() {
   // state for all gallons
   const [gallons, setGallons] = useState<ProductObject[]>([]);
 
+  // Handlers to update state
   function submitHandler(data: ProductObject[]) {
     setGallons(data);
   }
