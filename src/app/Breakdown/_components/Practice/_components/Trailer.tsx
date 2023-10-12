@@ -1,7 +1,7 @@
 import { ProductObject } from "@/app/Breakdown/_data/constants";
 import CompartmentPractice from "./CompartmentPractice";
 import { TruckType } from "./products/ProductLabel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 enum TrailerName {
   SEMI = "SEMI",
@@ -21,13 +21,20 @@ function trailer_name(truck_type: TruckType) {
 }
 
 // Trailer's MAIN()
-export default function Trailer({ gallons, backGallons, truckType }: { gallons: ProductObject[], backGallons: any, truckType: TruckType }) {
+export default function Trailer({ gallons, backGallons, truckType, clearChoice }: { gallons: ProductObject[], backGallons: any, truckType: TruckType, clearChoice: boolean }) {
   // Stetes for Compartments
   const [chosenProductCompartmentOne, setChosenProductCompartmentOne] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentTwo, setChosenProductCompartmentTwo] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentThree, setChosenProductCompartmentThree] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentFour, setChosenProductCompartmentFour] = useState<ProductObject | null>(null);
   const chosenGallons: ProductObject[] = [];
+
+  useEffect(() => {
+    setChosenProductCompartmentOne(null);
+    setChosenProductCompartmentTwo(null);
+    setChosenProductCompartmentThree(null);
+    setChosenProductCompartmentFour(null);
+  }, [clearChoice]);
 
   // Handlers
   function backGallons_1(data: ProductObject) {
@@ -58,13 +65,13 @@ export default function Trailer({ gallons, backGallons, truckType }: { gallons: 
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
       <div className="flex justify-center mt-2">{trailer_name(truckType)}</div>
       <div className="flex flex-row-reverse">
-        <CompartmentPractice truck_type={truckType} comp={1} gallons={gallons} backGallonsHandler={backGallons_1} />
-        <CompartmentPractice truck_type={truckType} comp={2} gallons={gallons} backGallonsHandler={backGallons_2} />
-        <CompartmentPractice truck_type={truckType} comp={3} gallons={gallons} backGallonsHandler={backGallons_3} />
-        <CompartmentPractice truck_type={truckType} comp={4} gallons={gallons} backGallonsHandler={backGallons_4} />
+        <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={1} gallons={gallons} backGallonsHandler={backGallons_1} />
+        <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={2} gallons={gallons} backGallonsHandler={backGallons_2} />
+        <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={3} gallons={gallons} backGallonsHandler={backGallons_3} />
+        <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={4} gallons={gallons} backGallonsHandler={backGallons_4} />
       </div>
       <div className="flex justify-center w-full">
-        <button onClick={checkButtonHandler} className="flex justify-center m-1 p-1 w-full pointer-events-auto bg-sky-800 hover:bg-sky-900 rounded-md border border-blue-950">Check</button>
+        <button onClick={checkButtonHandler} className="flex justify-center m-2 p-1 w-full pointer-events-auto bg-sky-800 hover:bg-sky-900 rounded-md border border-blue-950">Check</button>
       </div>
     </div>
   )

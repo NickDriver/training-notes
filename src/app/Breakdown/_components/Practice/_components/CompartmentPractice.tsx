@@ -3,8 +3,8 @@ import Choice from "./Choice";
 import { ProductLabel, TruckType, CompartmentNumber, Product } from "./products/ProductLabel";
 
 export default function CompartmentPractice(
-  { comp, gallons, truck_type, backGallonsHandler }:
-    { comp: CompartmentNumber, gallons: ProductObject[], truck_type: TruckType, backGallonsHandler: any }) {
+  { comp, gallons, truck_type, backGallonsHandler, clearChoice }:
+    { comp: CompartmentNumber, gallons: ProductObject[], truck_type: TruckType, backGallonsHandler: any, clearChoice: boolean }) {
 
   // Handler to move state from Choice up to Trailer
   function chosenProductHandler(data: ProductObject) {
@@ -17,7 +17,7 @@ export default function CompartmentPractice(
       <ProductLabel comp={comp} truck_type={truck_type} product={Product.GAS} />
       <ProductLabel comp={comp} truck_type={truck_type} product={Product.DSL} />
       <ProductLabel comp={comp} truck_type={truck_type} product={Product.ETH} />
-      <Choice gallons={gallons} chosenProductHandler={chosenProductHandler} />
+      <Choice clearChoice={clearChoice} gallons={gallons} chosenProductHandler={chosenProductHandler} />
     </div>
   )
 }
