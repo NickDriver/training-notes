@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProductObject, Products } from "../../_data/constants";
 import Actions from "./_components/Actions";
 import Trailer from "./_components/Trailer";
 import { TruckType } from "./_components/products/ProductLabel";
 import { calculatedGallons } from "../calculation";
 
-export default function Practice({ gallons }: { gallons: ProductObject[] }) {
+export default function Practice({ gallons, clearChoice }: { gallons: ProductObject[], clearChoice: boolean }) {
   // State for chosen Gallons
   const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
 
@@ -24,7 +24,7 @@ export default function Practice({ gallons }: { gallons: ProductObject[] }) {
 
   return (
     <div className="flex w-full m-2 rounded-md">
-      <Trailer truckType={truckType} gallons={gallons} backGallons={chosenGallons} />
+      <Trailer truckType={truckType} gallons={gallons} backGallons={chosenGallons} clearChoice={clearChoice} />
       <Actions gallons={chosenProductsGallons} truckType={setTruck} />
     </div>
   )

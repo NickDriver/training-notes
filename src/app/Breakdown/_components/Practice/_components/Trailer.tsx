@@ -1,7 +1,7 @@
 import { ProductObject } from "@/app/Breakdown/_data/constants";
 import CompartmentPractice from "./CompartmentPractice";
 import { TruckType } from "./products/ProductLabel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 enum TrailerName {
   SEMI = "SEMI",
@@ -21,13 +21,20 @@ function trailer_name(truck_type: TruckType) {
 }
 
 // Trailer's MAIN()
-export default function Trailer({ gallons, backGallons, truckType }: { gallons: ProductObject[], backGallons: any, truckType: TruckType }) {
+export default function Trailer({ gallons, backGallons, truckType, clearChoice }: { gallons: ProductObject[], backGallons: any, truckType: TruckType, clearChoice: boolean }) {
   // Stetes for Compartments
   const [chosenProductCompartmentOne, setChosenProductCompartmentOne] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentTwo, setChosenProductCompartmentTwo] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentThree, setChosenProductCompartmentThree] = useState<ProductObject | null>(null);
   const [chosenProductCompartmentFour, setChosenProductCompartmentFour] = useState<ProductObject | null>(null);
   const chosenGallons: ProductObject[] = [];
+
+  useEffect(() => {
+    setChosenProductCompartmentOne(null);
+    setChosenProductCompartmentTwo(null);
+    setChosenProductCompartmentThree(null);
+    setChosenProductCompartmentFour(null);
+  }, [clearChoice]);
 
   // Handlers
   function backGallons_1(data: ProductObject) {
