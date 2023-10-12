@@ -1,6 +1,5 @@
 import { CompartmentSizes } from "@/app/Breakdown/_data/constants";
 
-
 export enum TruckType {
   SEMI,
   TUB_THREE,

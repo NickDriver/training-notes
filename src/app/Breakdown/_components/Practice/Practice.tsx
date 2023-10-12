@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { ProductObject, Products } from "../../_data/constants";
+import { useState } from "react";
+import { ProductObject } from "../../_data/constants";
 import Actions from "./_components/Actions";
 import Trailer from "./_components/Trailer";
 import { TruckType } from "./_components/products/ProductLabel";

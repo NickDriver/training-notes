@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Gallons from "./Gallons/Gallons";
 import Practice from "./Practice/Practice";
-import { ProductObject, Products } from "../_data/constants";
+import { ProductObject } from "../_data/constants";
 
 export default function BreakdownBox() {
   // State for clear inputs fields
