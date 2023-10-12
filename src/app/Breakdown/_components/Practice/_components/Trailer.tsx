@@ -57,7 +57,9 @@ export default function Trailer({ gallons, truck_type, backGallons }: { gallons:
   if (chosenProductCompartmentThree) chosenGallons.push(chosenProductCompartmentThree);
   if (chosenProductCompartmentFour) chosenGallons.push(chosenProductCompartmentFour);
 
-  backGallons(chosenGallons);
+  function shoot() {
+    backGallons(chosenGallons);
+  }
 
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
@@ -67,6 +69,9 @@ export default function Trailer({ gallons, truck_type, backGallons }: { gallons:
         <CompartmentPractice truck_type={truck_type} comp={2} gallons={gallons} backGallonsHandler={backGallons_2} />
         <CompartmentPractice truck_type={truck_type} comp={3} gallons={gallons} backGallonsHandler={backGallons_3} />
         <CompartmentPractice truck_type={truck_type} comp={4} gallons={gallons} backGallonsHandler={backGallons_4} />
+      </div>
+      <div className="flex justify-center w-full">
+        <button onClick={shoot} className="flex justify-center m-1 p-1 w-full pointer-events-auto bg-sky-800 hover:bg-sky-900 rounded-md border border-blue-950">Check</button>
       </div>
     </div>
   )

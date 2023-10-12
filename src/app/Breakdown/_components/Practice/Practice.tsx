@@ -7,13 +7,12 @@ import { calculatedGallons } from "../calculation";
 
 export default function Practice({ gallons }: { gallons: ProductObject[] }) {
   // UseState for gallons for subtraction - HERE
-  // const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
+  const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
   function chosenGallons(data: ProductObject[]) {
-    console.log(calculatedGallons(gallons, data));
+    setChosenProductsGallons(calculatedGallons(gallons, data));
 
     /// SWAP gallons to updated gallons and send to <Actions /> HERE!!!!!
   }
-  // console.log(chosenProductsGallons);
 
   // Function to chose beetwen SEMI, TUB, TWO
   // HERE
@@ -21,7 +20,7 @@ export default function Practice({ gallons }: { gallons: ProductObject[] }) {
   return (
     <div className="flex w-full m-2 rounded-md">
       <Trailer truck_type={truck_type} gallons={gallons} backGallons={chosenGallons} />
-      <Actions gallons={gallons} />
+      <Actions gallons={chosenProductsGallons} />
     </div>
   )
 }
