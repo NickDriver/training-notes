@@ -6,6 +6,7 @@ export default function CompartmentPractice(
   { comp, gallons, truck_type, backGallonsHandler }:
     { comp: CompartmentNumber, gallons: ProductObject[], truck_type: TruckType, backGallonsHandler: any }) {
 
+  // Handler to move state from Choice up to Trailer
   function chosenProductHandler(data: ProductObject) {
     backGallonsHandler(data);
   }
