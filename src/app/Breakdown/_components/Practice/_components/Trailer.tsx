@@ -64,9 +64,11 @@ export default function Trailer({ gallons, backGallons, truckType, clearChoice }
   return (
     <div className="flex flex-col my-2 w-3/4 bg-slate-800 rounded-md">
       <div className="flex justify-center mt-2">{trailer_name(truckType)}</div>
-      <div className="flex flex-row-reverse">
+      <div className="flex flex-row-reverse items-center">
         <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={1} gallons={gallons} backGallonsHandler={backGallons_1} />
+        {(truckType === TruckType.TUB_THREE) ? <div className="h-2 w-2/12 m-2 bg-orange-300 rounded-lg shadow-md shadow-slate-900"></div> : <p></p>}
         <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={2} gallons={gallons} backGallonsHandler={backGallons_2} />
+        {(truckType === TruckType.TWO_TWO) ? <div className="h-2 w-2/12 m-2 bg-orange-300 rounded-lg shadow-md shadow-slate-900"></div> : <p></p>}
         <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={3} gallons={gallons} backGallonsHandler={backGallons_3} />
         <CompartmentPractice clearChoice={clearChoice} truck_type={truckType} comp={4} gallons={gallons} backGallonsHandler={backGallons_4} />
       </div>
