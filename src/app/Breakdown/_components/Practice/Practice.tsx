@@ -6,6 +6,7 @@ import { TruckType } from "./_components/products/ProductLabel";
 import { calculatedGallons } from "../calculation";
 
 export default function Practice({ gallons }: { gallons: ProductObject[] }) {
+  // State for chosen Gallons
   const [chosenProductsGallons, setChosenProductsGallons] = useState<ProductObject[]>([]);
 
   // Handler to do math on gallons and send result to Breakdown
@@ -13,12 +14,9 @@ export default function Practice({ gallons }: { gallons: ProductObject[] }) {
     setChosenProductsGallons(calculatedGallons(gallons, data));
   }
 
-  // Function to chose beetwen SEMI, TUB, TWO
-  // HERE
-  let truck_type = TruckType.SEMI;
   return (
-    <div className="flex w-full m-2 rounded-md">
-      <Trailer truck_type={truck_type} gallons={gallons} backGallons={chosenGallons} />
+    <div className="flex w-full m-2 rounded-md hover:bg-rose-500">
+      <Trailer gallons={gallons} backGallons={chosenGallons} />
       <Actions gallons={chosenProductsGallons} />
     </div>
   )
