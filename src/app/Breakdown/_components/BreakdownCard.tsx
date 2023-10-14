@@ -24,7 +24,7 @@ export default function BreakdownBox() {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center space-x-2 p-2">
       <Practice gallons={gallons} clearChoice={clearChoice} />
       <Gallons
         submitHandler={submitHandler}
