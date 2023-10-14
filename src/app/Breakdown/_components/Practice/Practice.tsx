@@ -23,7 +23,7 @@ export default function Practice({ gallons, clearChoice }: { gallons: ProductObj
   }
 
   return (
-    <div className="flex w-full m-2 rounded-md">
+    <div className="flex w-full rounded-md">
       <Trailer truckType={truckType} gallons={gallons} backGallons={chosenGallons} clearChoice={clearChoice} />
       <Actions gallons={chosenProductsGallons} truckType={setTruck} />
     </div>

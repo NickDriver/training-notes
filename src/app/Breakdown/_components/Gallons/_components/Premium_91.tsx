@@ -8,9 +8,9 @@ export default function Premium_91({ onPremiumInput }: { onPremiumInput: any }) 
   }
 
   return (
-    <div className="flex justify-between m-2 bg-red-600 text-stone-950 rounded-sm">
-      <label className="m-1">91-Prm</label>
-      <input className="m-1 font-bold" type="number" name="premium" onChange={premiumInputHandler} />
+    <div className="flex justify-between bg-red-600 text-stone-950 rounded-sm">
+      <label className="">91-Prm</label>
+      <input className="font-bold" type="number" name="premium" onChange={premiumInputHandler} />
     </div>
   )
 }

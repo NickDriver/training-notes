@@ -129,8 +129,8 @@ export function ProductLabel({ comp, truck_type, product }: { comp: CompartmentN
 
   return (
     <div className="flex justify-between w-full text-xs">
-      <div data-testid="product" className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{product}</div>
-      <div data-testid="size" className={"flex justify-center w-2/3 m-1 rounded-md " + color}>{size.toString()}</div>
+      <div data-testid="product" className={"flex justify-center w-2/3 rounded-md " + color}>{product}</div>
+      <div data-testid="size" className={"flex justify-center w-2/3 rounded-md " + color}>{size.toString()}</div>
     </div>
   )
 }

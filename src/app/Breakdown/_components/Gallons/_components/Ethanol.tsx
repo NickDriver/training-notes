@@ -8,9 +8,9 @@ export default function Ethanol({ onEthanolInput }: { onEthanolInput: any }) {
   }
 
   return (
-    <div className="flex justify-between m-2 bg-sky-600 text-stone-950 rounded-sm">
-      <label className="m-1">Ethanol</label>
-      <input className="m-1 font-bold" type="number" name="ethanol" onChange={ethanolInputHandler} />
+    <div className="flex justify-between bg-sky-600 text-stone-950 rounded-sm">
+      <label className="">Ethanol</label>
+      <input className=" font-bold" type="number" name="ethanol" onChange={ethanolInputHandler} />
     </div>
   )
 }
