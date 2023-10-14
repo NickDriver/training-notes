@@ -12,7 +12,7 @@ export default function CompartmentPractice(
   }
 
   return (
-    <div className="flex flex-col grow items-center space-y-1 px-2 bg-slate-500 text-slate-900 rounded-md">
+    <div className="flex flex-col grow items-center space-y-1 p-2 bg-slate-500 text-slate-900 rounded-md">
       <div className="font-bold">{comp.toString()}</div>
       <ProductLabel comp={comp} truck_type={truck_type} product={Product.GAS} />
       <ProductLabel comp={comp} truck_type={truck_type} product={Product.DSL} />

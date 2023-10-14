@@ -8,9 +8,9 @@ export default function E85({ onE85Input }: { onE85Input: any }) {
   }
 
   return (
-    <div className="flex justify-between bg-yellow-500 text-stone-950 rounded-sm">
+    <div className="flex justify-between p-1 bg-yellow-500 text-stone-950 rounded-sm">
       <label className="">E85</label>
-      <input className=" font-bold" type="number" name="e85" onChange={e85InputHandler} />
+      <input className="w-3/4 font-bold" type="number" name="e85" onChange={e85InputHandler} />
     </div>
   )
 }

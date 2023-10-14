@@ -67,7 +67,7 @@ export default function Gallons({ submitHandler, resetForm }:
   }
 
   return (
-    <div className="p-2 bg-sky-800 rounded-md">
+    <div className="p-2 w-1/4 bg-sky-800 rounded-md">
       <form className="flex flex-col space-y-2">
         <Regular_87 onRegularInput={regularHandler} />
         <Midgrade_89 onMidgradeInput={midgradeHandler} />

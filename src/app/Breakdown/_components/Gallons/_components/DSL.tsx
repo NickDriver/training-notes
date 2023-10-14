@@ -8,9 +8,9 @@ export default function DSL({ onDieselInput }: { onDieselInput: any }) {
   }
 
   return (
-    <div className="flex justify-between bg-green-700 text-stone-950 rounded-sm">
+    <div className="flex justify-between p-1 bg-green-700 text-stone-950 rounded-sm">
       <label className="" data-testid="label-diesel">Diesel</label>
-      <input className=" font-bold" type="number" name="diesel" onChange={dieselInputHandler} />
+      <input className="w-3/4 font-bold" type="number" name="diesel" onChange={dieselInputHandler} />
     </div>
   )
 }
