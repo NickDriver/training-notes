@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NavBar />
-        <div className='border-box max-w-24 lg:border-box h-full p-4'>{children}</div>
+        <div className='border-box h-full p-4'>{children}</div>
 
       </body>
     </html>
